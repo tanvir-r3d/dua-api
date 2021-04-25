@@ -39,8 +39,8 @@
 
 
                 <div class="block block-themed block-rounded block-shadow">
-                    <div class="block-header bg-gd-dusk">
-                        <h3 class="block-title">Please Sign In</h3>
+                    <div class="block-header bg-gd-dusk" style="background:#59c3c3 !important;">
+                        <h3 class="block-title"><b>Please Sign In</b></h3>
                     </div>
                     <div class="block-content">
                         <div class="form-group row">
