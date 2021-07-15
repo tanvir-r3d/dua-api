@@ -158,6 +158,128 @@
             </table>
         </div>
         <div class="overflow-hidden content-section" id="content-get-characters">
+            <h2 id="category-details">Categorywise subcategory details</h2>
+            <p>
+                To get categorywise subcategory details you need to make a GET call to the following url :<br>
+                <code class="higlighted">{{url()->current()}}/category/subcategory/(id)</code>
+            </p>
+            <br>
+            <h4>QUERY PARAMETERS</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                       <td>id</td>
+                       <td>Number</td>
+                       <td>Get subcategory details by subcategory id.
+                           <br> {{url()->current()}}/category/subcategory/6
+                           <br> {{url()->current()}}/category/subcategory/7
+                       </td>
+                   </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="overflow-hidden content-section" id="content-get-characters">
+            <h2 id="get-duas">get subcategories</h2>
+            <p>
+                To get subcategories data you need to make a GET call to the following url :<br>
+                <code class="higlighted">{{url()->current()}}/subcategory</code>
+            </p>
+            <br>
+            <h4>QUERY PARAMETERS</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                       <td>search</td>
+                       <td>String</td>
+                       <td>(optional) Search by name of subcategories.
+                           <br> {{url()->current()}}/subcategory?search=Hadis
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>col</td>
+                       <td>String</td>
+                       <td>(optional) Column name for ordering. Default column is subcategory name
+                           <br> {{url()->current()}}/subcategory?col=id
+                           <br> {{url()->current()}}/subcategory?col=name
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>order</td>
+                       <td>String</td>
+                       <td>(optional) Column Ordering Ascending or Descending. Default order state  is subcategory name asc
+                       <br> {{url()->current()}}/subcategory?col=id&order=desc
+                       <br> {{url()->current()}}/subcategory?col=name&order=asc
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>limit</td>
+                       <td>Number</td>
+                       <td>(optional) Limit subcategory fetch
+                       <br> {{url()->current()}}/subcategory?limit=10
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>status</td>
+                       <td>Number</td>
+                       <td>(optional) Status wise subcategory(1="active", 0="inactive")
+                       <br> {{url()->current()}}/subcategory?status=1
+                       <br> {{url()->current()}}/subcategory?status=0
+                       </td>
+                   </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="overflow-hidden content-section" id="content-get-characters">
+            <h2 id="category-details">Subcategory details</h2>
+            <p>
+                To get subcategory details you need to make a GET call to the following url :<br>
+                <code class="higlighted">{{url()->current()}}/subcategory/(id|slug)</code>
+            </p>
+            <br>
+            <h4>QUERY PARAMETERS</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                       <td>id</td>
+                       <td>Number</td>
+                       <td>Get subcategory details by subcategory id.
+                           <br> {{url()->current()}}/subcategory/6
+                           <br> {{url()->current()}}/subcategory/7
+                       </td>
+                   </tr>
+                   <tr>
+                    <td>slug</td>
+                    <td>String</td>
+                    <td>Get subcategory details by subcategory slug.
+                        <br> {{url()->current()}}/subcategory/hadis
+                        <br> {{url()->current()}}/subcategory/al-quran
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="overflow-hidden content-section" id="content-get-characters">
             <h2 id="get-duas">get duas</h2>
             <p>
                 To get duas data you need to make a GET call to the following url :<br>

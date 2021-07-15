@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Subcategory;
 use Illuminate\Http\Response;
 
-class CategoryWiseDuahApi extends Controller
+class SubcategoryWiseDuahApi extends Controller
 {
     /**
      * Handle the incoming request.
@@ -17,10 +17,10 @@ class CategoryWiseDuahApi extends Controller
     public function __invoke($slug)
     {
         if ((int)$slug) {
-            $category = Category::with('duahs')->findOrFail($slug);
+            $subcategory = Subcategory::with('duahs', 'category')->findOrFail($slug);
         } else {
-            $category = Category::with('duahs')->where('slug', $slug)->first();
+            $subcategory = Subcategory::with('duahs', 'category')->where('slug', $slug)->first();
         }
-        return response()->json($category, Response::HTTP_OK);
+        return response()->json($subcategory, Response::HTTP_OK);
     }
 }

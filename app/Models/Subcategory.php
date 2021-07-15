@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Subcategory extends Model
 {
     use HasFactory;
 
     protected $primaryKey = "id";
-    protected $table = "categories";
-    protected $fillable = ["name", "slug", "status"];
+    protected $table = "subcategories";
+    protected $fillable = ["category_id", "name", "slug", "status"];
 
     public function scopeSearch($query, $q)
     {
@@ -20,13 +20,13 @@ class Category extends Model
         });
     }
 
-    public function duahs()
+    public function category()
     {
-        return $this->hasMany(Duah::class, 'category_id');
+        return $this->belongsTo(Category::class, 'category_id', 'id')->withDefault();
     }
 
-    public function subcategories()
+    public function duahs()
     {
-        return $this->hasMany(Subcategory::class, 'category_id');
+        return $this->hasMany(Duah::class, 'subcategory_id');
     }
 }

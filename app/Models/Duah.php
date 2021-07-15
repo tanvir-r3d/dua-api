@@ -16,6 +16,7 @@ class Duah extends Model
         "title",
         "slug",
         "category_id",
+        "subcategory_id",
         "details_en",
         "details_bn",
         "details_ar",

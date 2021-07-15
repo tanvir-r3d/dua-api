@@ -47,6 +47,12 @@
                     </a>
                 </li>
                 <li>
+                    <a class="active" href="/subcategory">
+                        {{-- <i class="si si-cup"></i> --}}
+                        <span class="sidebar-mini-hide">Subcategory</span>
+                    </a>
+                </li>
+                <li>
                     <a class="active" href="/dua">
                         {{-- <i class="si si-cup"></i> --}}
                         <span class="sidebar-mini-hide">Dua</span>

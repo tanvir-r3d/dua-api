@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Api\CategoryApi;
 use App\Http\Controllers\Api\CategoryWiseDuahApi;
+use App\Http\Controllers\Api\CategoryWiseSubcategoryApi;
 use App\Http\Controllers\Api\DuahApi;
 use App\Http\Controllers\Api\DuahDetailsApi;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\SubcategoryApi;
+use App\Http\Controllers\Api\SubcategoryWiseDuahApi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +20,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("category/{slug}", CategoryWiseDuahApi::class);
+Route::get("category/subcategory/{id}", CategoryWiseSubcategoryApi::class);
 Route::get("category", CategoryApi::class);
+Route::get("category/{slug}", CategoryWiseDuahApi::class);
+Route::get("subcategory", SubcategoryApi::class);
+Route::get("subcategory/{slug}", SubcategoryWiseDuahApi::class);
 Route::get("dua/{slug}", DuahDetailsApi::class);
 Route::get("dua", DuahApi::class);
 Route::get("/", function () {

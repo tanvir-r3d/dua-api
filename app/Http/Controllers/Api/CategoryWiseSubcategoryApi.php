@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Response;
 
-class CategoryWiseDuahApi extends Controller
+class CategoryWiseSubcategoryApi extends Controller
 {
     /**
      * Handle the incoming request.
@@ -14,13 +14,9 @@ class CategoryWiseDuahApi extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke($slug)
+    public function __invoke($id)
     {
-        if ((int)$slug) {
-            $category = Category::with('duahs')->findOrFail($slug);
-        } else {
-            $category = Category::with('duahs')->where('slug', $slug)->first();
-        }
+        $category = Category::with('subcategories', 'subcategories.duahs')->findOrFail($id);
         return response()->json($category, Response::HTTP_OK);
     }
 }
